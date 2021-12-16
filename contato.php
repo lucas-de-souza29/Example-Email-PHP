@@ -1,12 +1,8 @@
 <?php 
 
 
-if(isset($_POST['email']) && !empty($_POST['email'])){
-  
-  //ini_set("SMTP","smtp.gmail.com");
-  //ini_set("smtp_port","465");
-  //ini_set('sendmail_from','test@gmail.com');
-
+if(isset($_POST['email']) && !empty($_POST['email']))
+{
   $name = addslashes($_POST['name']);
   $email = addslashes($_POST['email']);
   $message = addslashes($_POST['message']);
@@ -22,14 +18,14 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
    	         "Reply-To:".$email."\n".
    	         "X=Mailer:PHP/".phpversion();
 
-   	if(mail($to, $subject, $body, $header)){
+   if(mail($to, $subject, $body, $header)){
 
        echo "Email enviado com sucesso!";
    	
-    }else{
+   }else{
    	
        echo "Erro ao enviar o email";
-   	}
+   }
 }
 
 ?>
