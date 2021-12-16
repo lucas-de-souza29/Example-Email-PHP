@@ -3,6 +3,10 @@
 
 if(isset($_POST['email']) && !empty($_POST['email']))
 {
+  //ini_set("SMTP","smtp.gmail.com");
+  //ini_set("smtp_port","465");
+  //ini_set('sendmail_from','test@gmail.com');
+  
   $name = addslashes($_POST['name']);
   $email = addslashes($_POST['email']);
   $message = addslashes($_POST['message']);
